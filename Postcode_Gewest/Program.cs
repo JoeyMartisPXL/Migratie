@@ -1,9 +1,5 @@
 ﻿using Npgsql;
 using NPoco;
-using P.DatabaseConnection;
-using Personeel.DatabaseConnection;
-using Personeel.Mapping;
-using Personeel.Models.ModelsOracle;
 using Postcode_Gewest.DatabaseConnection;
 using Postcode_Gewest.Mapping;
 using Postcode_Gewest.Models.ModelsOracle;
@@ -22,8 +18,8 @@ namespace Postcode_Gewest
             var postcodeMap = PostcodeMapToCockroachDB.Map(postcodes);
 
             // Personeel data migration
-            var gewest = context.Gewests.ToArray();
-            var gewestMap = GewestCockroachDB.Map(gewest);
+            var gewests = context.Gewests.ToArray();
+            var gewestMap = GewestMapToCockroachDB.Map(gewests);
 
             var database = new DatabaseCockroachDB();
             string connectionString = database.GetConnectionString();
@@ -34,9 +30,14 @@ namespace Postcode_Gewest
                 {
                     db.BeginTransaction();
 
-                    foreach (var item in postcodeMap)
+                    foreach (var gewest in gewestMap)
                     {
-                        db.Insert(item);
+                        db.Execute($"INSERT INTO gewest (codgewest, naam) VALUES ({gewest.Codgewest}, @0)", gewest.Naam);
+                    }
+
+                    foreach (var postcode in postcodeMap)
+                    {
+                        db.Execute($"INSERT INTO postcode (codpostcode, van, tot, codgewest) VALUES ({postcode.Codpostcode}, @0, @1, {postcode.Codgewest})", postcode.Van, postcode.Tot);
                     }
 
                     db.CompleteTransaction();

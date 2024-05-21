@@ -9,10 +9,6 @@ public partial class GewestCockroachDB
 
     public string Naam { get; set; } = null!;
 
-    public virtual ICollection<Postcode> Postcodes { get; set; } = new List<Postcode>();
+    /*public virtual ICollection<Postcode> Postcodes { get; set; } = new List<Postcode>();*/
 
-    internal static object Map(Gewest[] gewest)
-    {
-        throw new NotImplementedException();
-    }
 }

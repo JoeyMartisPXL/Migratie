@@ -1,4 +1,5 @@
 ﻿using Postcode_Gewest.Models.ModelsCockroachDB;
+using Postcode_Gewest.Models.ModelsOracle;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +10,15 @@ namespace Postcode_Gewest.Mapping
 {
     public class GewestMapToCockroachDB
     {
-        public static List<PostcodeCockroachDB> Map(IEnumerable<Models.ModelsOracle.Postcode> postcodes)
+        public static List<GewestCockroachDB> Map(Gewest[] gewests)
         {
-            var cockroachDBList = new List<PostcodeCockroachDB>();
-            foreach (var postcode in postcodes)
+            var cockroachDBList = new List<GewestCockroachDB>();
+            foreach (var gewest in gewests)
             {
-                var cockroachDB = new PostcodeCockroachDB
+                var cockroachDB = new GewestCockroachDB
                 {
-                    Codpostcode = (int)postcode.Codpostcode,
-                    Van = (int)postcode.Van,
-                    Tot = (int)postcode.Tot,
-                    Codgewest = (int)postcode.Codgewest
+                    Codgewest = gewest.Codgewest,
+                    Naam = gewest.Naam
                 };
                 cockroachDBList.Add(cockroachDB);
             }

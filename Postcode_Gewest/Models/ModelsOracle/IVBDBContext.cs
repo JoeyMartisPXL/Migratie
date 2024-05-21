@@ -67,10 +67,10 @@ public partial class IVBDBContext : DbContext
                 .HasPrecision(4)
                 .HasColumnName("VAN");
 
-            entity.HasOne(d => d.CodgewestNavigation).WithMany(p => p.Postcodes)
+/*            entity.HasOne(d => d.CodgewestNavigation).WithMany(p => p.Postcodes)
                 .HasForeignKey(d => d.Codgewest)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_GEWEST");
+                .HasConstraintName("FK_GEWEST");*/
         });
         modelBuilder.HasSequence("ANALYTICSSEQ");
         modelBuilder.HasSequence("BELBEEFSEQ");
