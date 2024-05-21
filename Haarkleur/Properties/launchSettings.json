@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Haarkleur": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false,
+      "authenticationMode": "Windows",
+      "remoteDebugMachine": "",
+      "nativeDebugging": false,
+      "sqlDebugging": false,
+      "jsWebView2Debugging": false,
+      "hotReloadEnabled": false
+    }
+  }
+}
