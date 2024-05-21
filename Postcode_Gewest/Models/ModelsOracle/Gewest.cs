@@ -9,5 +9,5 @@ public partial class Gewest
 
     public string Naam { get; set; } = null!;
 
-    public virtual ICollection<Postcode> Postcodes { get; set; } = new List<Postcode>();
-}
+/*    public virtual ICollection<Postcode> Postcodes { get; set; } = new List<Postcode>();
+*/}
