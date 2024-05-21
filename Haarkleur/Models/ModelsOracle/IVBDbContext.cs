@@ -5,13 +5,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace Haarkleur.Models.ModelsOracle;
 
-public partial class IVBDbContext : DbContext
+public partial class IVBDBContext : DbContext
 {
-    public IVBDbContext()
+    public IVBDBContext()
     {
     }
 
-    public IVBDbContext(DbContextOptions<IVBDbContext> options)
+    public IVBDBContext(DbContextOptions<IVBDBContext> options)
         : base(options)
     {
     }

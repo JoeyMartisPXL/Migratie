@@ -13,7 +13,7 @@ namespace Haarkleur
     {
         static void Main(string[] args)
         {
-            using var context = new IVBDbContext();
+            using var context = new IVBDBContext();
             var haarkleuren = context.Haarkleurs.ToArray();
 
             var haarkleurenMap = HaarkleurMapToCockroachDB.Map(haarkleuren);

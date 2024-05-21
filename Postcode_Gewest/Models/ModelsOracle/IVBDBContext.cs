@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Postcode_Gewest.ModelsOracle;
+namespace Postcode_Gewest.Models.ModelsOracle;
 
 public partial class IVBDBContext : DbContext
 {

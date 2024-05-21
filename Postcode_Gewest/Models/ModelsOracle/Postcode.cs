@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Postcode_Gewest.ModelsOracle;
+namespace Postcode_Gewest.Models.ModelsOracle;
 
 public partial class Postcode
 {
