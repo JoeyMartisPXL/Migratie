@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Postcode_Gewest", "Postcode
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taal", "Taal\Taal.csproj", "{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document_Documenttype", "Document_Documenttype\Document_Documenttype.csproj", "{FB7A6819-5EA4-4201-B220-1442B518B23F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB7A6819-5EA4-4201-B220-1442B518B23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB7A6819-5EA4-4201-B220-1442B518B23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB7A6819-5EA4-4201-B220-1442B518B23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB7A6819-5EA4-4201-B220-1442B518B23F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
