@@ -32,7 +32,25 @@ namespace Taal
 
                     foreach (var vertalinglink in vertalinglinksMap)
                     {
+                        db.Insert(vertalinglink);
+                    }
 
+                    var existingSeqtrans = new HashSet<int>();
+                    foreach (var vertalinglink in vertalinglinksMap)
+                    {
+                        existingSeqtrans.Add(vertalinglink.Seqtrans);
+                    }
+                    
+                    foreach (var vertaling in vertalingenMap)
+                    {
+                        if(existingSeqtrans.Contains(vertaling.Seqtrans)){
+                            db.Insert(vertaling);
+                        }
+
+                    }
+                    foreach (var taal in talenMap)
+                    {
+                        db.Insert(taal);
                     }
 
                     db.CompleteTransaction();

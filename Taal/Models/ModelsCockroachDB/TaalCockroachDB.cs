@@ -7,28 +7,39 @@ using NPoco;
 namespace Taal.Models.ModelsCockroachDB
 {
 
-    [TableName("TAAL")]
-    [PrimaryKey("SEQLANG", AutoIncrement = false)]
+    [TableName("taal")]
+    [PrimaryKey("seqlang", AutoIncrement = false)]
     public partial class TaalCockroachDB
     {
-        [Column("SEQLANG")]
+        [Column("seqlang")]
         public int Seqlang { get; set; }
 
-        [Column("SEQTRANS")]
+        [Column("seqtrans")]
         public int? Seqtrans { get; set; }
 
-        [Column("CREDAT")]
-        public DateTime Credat { get; set; }
+        private DateTime credat;
+        [Column("credat")]
+        public DateTime Credat
+        {
+            get => credat;
+            set => credat = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
-        
-        [Column("UPDDAT")]
-        public DateTime Upddat { get; set; }
+        private DateTime upddat;
 
-        [Column("CREUSR")]
+        [Column("upddat")]
+        public DateTime Upddat
+        {
+            get => upddat;
+            set => upddat = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
+
+
+        [Column("creusr")]
         public string? Creusr { get; set; }
 
 
-        [Column("UPDUSR")]
+        [Column("updusr")]
         public string? Updusr { get; set; }
     }
 

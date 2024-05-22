@@ -1,30 +1,36 @@
 ﻿using NPoco;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Taal.Models.ModelsCockroachDB
 {
 
-    [TableName("VERTALINGLINK")]
-    [PrimaryKey("SEQTRANS", AutoIncrement = false)]
+    [TableName("vertalinglink")]
+    [PrimaryKey("seqtrans", AutoIncrement = false)]
     public partial class VertalinglinkCockroachDB
     {
-        [Column("SEQTRANS")]
+        [Column("seqtrans")]
         public int Seqtrans { get; set; }
 
-        [Column("CREDAT")]
-        public DateTime Credat { get; set; }
+        private DateTime credat;
+        [Column("credat")]
+        public DateTime Credat
+        {
+            get => credat;
+            set => credat = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
-        [Column("UPDDAT")]
-        public DateTime Upddat { get; set; }
+        private DateTime upddat;
 
-        [Column("CREUSR")]
+        [Column("upddat")]
+        public DateTime Upddat
+        {
+            get => upddat;
+            set => upddat = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
+
+        [Column("creusr")]
         public string? Creusr { get; set; }
 
-        [Column("UPDUSR")]
+        [Column("updusr")]
         public string? Updusr { get; set; }
     }
 
