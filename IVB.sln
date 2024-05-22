@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personeel", "Personeel\Pers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postcode_Gewest", "Postcode_Gewest\Postcode_Gewest.csproj", "{02D5A108-04B3-4F12-A225-7737643DCCEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taal", "Taal\Taal.csproj", "{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{02D5A108-04B3-4F12-A225-7737643DCCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02D5A108-04B3-4F12-A225-7737643DCCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02D5A108-04B3-4F12-A225-7737643DCCEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED108E7F-8884-4FF3-AD52-48601F9F8BC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
