@@ -21,7 +21,7 @@ public partial class Document
 
     public decimal? Mailopenedcount { get; set; }
 
-    public DateTime Mailopeneddate { get; set; }
+    public DateTime? Mailopeneddate { get; set; }
 
     public long? Seqdocumenttype { get; set; }
 

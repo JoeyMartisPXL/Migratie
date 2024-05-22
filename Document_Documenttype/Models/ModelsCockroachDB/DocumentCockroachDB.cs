@@ -1,9 +1,5 @@
-﻿using NPoco;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using NPoco;
 
 namespace Document_Documenttype.Models.ModelsCockroachDB
 {
@@ -13,8 +9,10 @@ namespace Document_Documenttype.Models.ModelsCockroachDB
     {
         [Column("seqdocument")]
         public long Seqdocument { get; set; }
+
         [Column("creusr")]
         public string? Creusr { get; set; }
+
         [Column("updusr")]
         public string? Updusr { get; set; }
 
@@ -33,21 +31,27 @@ namespace Document_Documenttype.Models.ModelsCockroachDB
             get => upddat;
             set => upddat = DateTime.SpecifyKind(value, DateTimeKind.Utc);
         }
+
         [Column("bericht")]
         public string? Bericht { get; set; }
+
         [Column("documentguid")]
         public string? Documentguid { get; set; }
+
         [Column("mailopenedcount")]
         public decimal? Mailopenedcount { get; set; }
 
-        private DateTime mailopeneddate;
-        [Column("mailopeneddata")]
-        public DateTime Mailopeneddate { 
-            get => mailopeneddate; 
-            set => mailopeneddate = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        private DateTime? mailopeneddate;
+        [Column("mailopeneddate")] // Corrected column name
+        public DateTime? Mailopeneddate
+        {
+            get => mailopeneddate;
+            set => mailopeneddate = value.HasValue ? DateTime.SpecifyKind(value.Value, DateTimeKind.Utc) : (DateTime?)null;
         }
+
         [Column("seqdocumenttype")]
         public long? Seqdocumenttype { get; set; }
+
         [Column("seqlang")]
         public int? Seqlang { get; set; }
     }

@@ -41,7 +41,7 @@ namespace Document_Documenttype.Models.ModelsCockroachDB
         public string? Pdfmaintemplate { get; set; }
         [Column("priority")]
         public long? Priority { get; set; }
-        [Column("seqtranstitle")]
+        [Column("seqtrans_title")]
         public int? SeqtransTitle { get; set; }
 
     }
