@@ -15,5 +15,5 @@ public partial class Vertalinglink
 
     public string? Updusr { get; set; }
 
-    public virtual ICollection<Vertaling> Vertalings { get; set; } = new List<Vertaling>();
+    /*public virtual ICollection<Vertaling> Vertalings { get; set; } = new List<Vertaling>();*/
 }

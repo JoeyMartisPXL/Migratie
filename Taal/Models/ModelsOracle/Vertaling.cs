@@ -19,7 +19,7 @@ public partial class Vertaling
 
     public string? Translat { get; set; }
 
-    public virtual Vertalinglink SeqtransNavigation { get; set; } = null!;
+    //public virtual Vertalinglink SeqtransNavigation { get; set; } = null!;
 
-    public virtual ICollection<Taal> Taals { get; set; } = new List<Taal>();
+    //public virtual ICollection<Taal> Taals { get; set; } = new List<Taal>();
 }

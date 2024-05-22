@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Taal.Models.ModelsOracle;
 
@@ -22,9 +23,20 @@ public partial class IVBDbContext : DbContext
     public virtual DbSet<Vertalinglink> Vertalinglinks { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseOracle("User Id=IVBUSER;Password=IVB;Data Source=localhost:1521/IVB;");
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            var basePath = AppContext.BaseDirectory.Substring(0, AppContext.BaseDirectory.IndexOf("bin"));
 
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(basePath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var connectionString = configuration.GetConnectionString("OracleConnection");
+            optionsBuilder.UseOracle(connectionString);
+        }
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
@@ -61,9 +73,9 @@ public partial class IVBDbContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("UPDUSR");
 
-            entity.HasOne(d => d.Vertaling).WithMany(p => p.Taals)
+/*            entity.HasOne(d => d.Vertaling).WithMany(p => p.Taals)
                 .HasForeignKey(d => new { d.Seqtrans, d.Seqlang })
-                .HasConstraintName("FK_TAAL_VERTALIN");
+                .HasConstraintName("FK_TAAL_VERTALIN");*/
         });
 
         modelBuilder.Entity<Vertaling>(entity =>
@@ -98,10 +110,10 @@ public partial class IVBDbContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("UPDUSR");
 
-            entity.HasOne(d => d.SeqtransNavigation).WithMany(p => p.Vertalings)
+/*            entity.HasOne(d => d.SeqtransNavigation).WithMany(p => p.Vertalings)
                 .HasForeignKey(d => d.Seqtrans)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_VERTALIN_VERTALIN");
+                .HasConstraintName("FK_VERTALIN_VERTALIN");*/
         });
 
         modelBuilder.Entity<Vertalinglink>(entity =>

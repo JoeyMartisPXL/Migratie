@@ -17,5 +17,5 @@ public partial class Taal
 
     public string? Updusr { get; set; }
 
-    public virtual Vertaling? Vertaling { get; set; }
+/*    public virtual Vertaling? Vertaling { get; set; }*/
 }
