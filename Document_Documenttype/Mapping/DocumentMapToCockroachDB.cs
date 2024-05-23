@@ -19,7 +19,15 @@ namespace Document_Documenttype.Mapping
                 {
                     Documentguid = document.Documentguid,
                     Seqdocument = document.Seqdocument,
-                    Seqdocumenttype = document.Seqdocumenttype
+                    Seqdocumenttype = document.Seqdocumenttype,
+                    Bericht = document.Bericht,
+                    Credat = document.Credat,
+                    Creusr = document.Creusr,
+                    Mailopenedcount = document.Mailopenedcount,
+                    Mailopeneddate = document.Mailopeneddate,
+                    Seqlang = document.Seqlang,
+                    Upddat = document.Upddat,
+                    Updusr = document.Updusr
                 };
 
                 _cockroachDBs.Add(cockroachDB);

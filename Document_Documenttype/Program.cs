@@ -8,15 +8,14 @@ namespace Document_Documenttype
 {
     public class Program
     {
-        private const int BatchSize = 1000;
+        private const int BatchSize = 10000;
 
         static void Main(string[] args)
         {
             using var context = new IVBDBContext();
 
-            /*ProcessAndInsertDocumentTypes(context);*/
+            ProcessAndInsertDocumentTypes(context);
 
-            // Process and insert documents
             ProcessAndInsertDocuments(context);
         }
 
