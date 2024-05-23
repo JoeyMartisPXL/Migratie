@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Document_Documenttype", "Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBericht", "TestBericht\TestBericht.csproj", "{08E0C843-C9D0-4B7A-BC94-55DC17E1600A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veehouder_Abonnement_Verzendingswijze", "Veehouder_abonnement_verzendingswijze\Veehouder_Abonnement_Verzendingswijze.csproj", "{E5E99F30-E971-4C1D-AA5F-C9FAB1B9BAF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{08E0C843-C9D0-4B7A-BC94-55DC17E1600A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08E0C843-C9D0-4B7A-BC94-55DC17E1600A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08E0C843-C9D0-4B7A-BC94-55DC17E1600A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E99F30-E971-4C1D-AA5F-C9FAB1B9BAF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E99F30-E971-4C1D-AA5F-C9FAB1B9BAF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E99F30-E971-4C1D-AA5F-C9FAB1B9BAF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E99F30-E971-4C1D-AA5F-C9FAB1B9BAF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
