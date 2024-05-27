@@ -17,5 +17,4 @@ public partial class Verzendingswijze
 
     public string? Updusr { get; set; }
 
-    /*public virtual ICollection<VeehouderAbonnement> VeehouderAbonnements { get; set; } = new List<VeehouderAbonnement>();*/
 }

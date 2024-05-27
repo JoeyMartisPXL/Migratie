@@ -19,5 +19,4 @@ public partial class Abonnement
 
     public byte Seqdiertype { get; set; }
 
-   /* public virtual ICollection<VeehouderAbonnement> VeehouderAbonnements { get; set; } = new List<VeehouderAbonnement>();*/
 }

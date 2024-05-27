@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Veehouder_Abonnement_Verzendingswijze.Models.ModelsOracle;
 [TableName("abonnement")]
-[PrimaryKey("seqabonnement")]
+[PrimaryKey("seqabonnement", AutoIncrement = false)]
 public partial class AbonnementCockroachDB
 {
     [Column("seqabonnement")]

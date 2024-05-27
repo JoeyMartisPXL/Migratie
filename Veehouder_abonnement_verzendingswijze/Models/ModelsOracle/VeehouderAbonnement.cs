@@ -13,7 +13,7 @@ public partial class VeehouderAbonnement
 
     public DateTime Datvan { get; set; }
 
-    public DateTime? Dattot { get; set; }
+    public DateTime Dattot { get; set; }
 
     public DateTime Credat { get; set; }
 
@@ -27,7 +27,4 @@ public partial class VeehouderAbonnement
 
     public string? Faxnr { get; set; }
 
-/*    public virtual Abonnement SeqabonnementNavigation { get; set; } = null!;
-
-    public virtual Verzendingswijze SeqverzendingswijzeNavigation { get; set; } = null!;*/
 }

@@ -24,8 +24,4 @@
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.23.40" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
-
 </Project>

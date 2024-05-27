@@ -16,11 +16,21 @@ public partial class VeehouderAbonnementCockroachDB
     [Column("seqabonnement")]
     public int Seqabonnement { get; set; }
 
+    private DateTime datvan;
     [Column("datvan")]
-    public DateTime Datvan { get; set; }
+    public DateTime Datvan
+    {
+        get => datvan;
+        set => datvan = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+    }
 
+    private DateTime dattot;
     [Column("dattot")]
-    public DateTime? Dattot { get; set; }
+    public DateTime Dattot
+    {
+        get => dattot;
+        set => dattot = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+    }
 
     private DateTime credat;
     [Column("credat")]
@@ -49,8 +59,4 @@ public partial class VeehouderAbonnementCockroachDB
 
     [Column("faxnr")]
     public string? Faxnr { get; set; }
-
-    /*    public virtual Abonnement SeqabonnementNavigation { get; set; } = null!;
-
-        public virtual Verzendingswijze SeqverzendingswijzeNavigation { get; set; } = null!;*/
 }

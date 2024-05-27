@@ -16,7 +16,7 @@ public partial class IVBDBContext : DbContext
     {
     }
 
-    public virtual DbSet<AbonnementCockroachDB> Abonnements { get; set; }
+    public virtual DbSet<Abonnement> Abonnements { get; set; }
 
     public virtual DbSet<VeehouderAbonnement> VeehouderAbonnements { get; set; }
 
@@ -43,7 +43,7 @@ public partial class IVBDBContext : DbContext
             .HasDefaultSchema("IVBUSER")
             .UseCollation("USING_NLS_COMP");
 
-        modelBuilder.Entity<AbonnementCockroachDB>(entity =>
+        modelBuilder.Entity<Abonnement>(entity =>
         {
             entity.HasKey(e => e.Seqabonnement);
 
@@ -122,16 +122,6 @@ public partial class IVBDBContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("UPDUSR");
-
-/*            entity.HasOne(d => d.SeqabonnementNavigation).WithMany(p => p.VeehouderAbonnements)
-                .HasForeignKey(d => d.Seqabonnement)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_SEQABO_VEEHOUDER_ABONNEMENT");
-
-            entity.HasOne(d => d.SeqverzendingswijzeNavigation).WithMany(p => p.VeehouderAbonnements)
-                .HasForeignKey(d => d.Seqverzendingswijze)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_ZW_VEEHOUDER_ABONNEMENT");*/
         });
 
         modelBuilder.Entity<Verzendingswijze>(entity =>
